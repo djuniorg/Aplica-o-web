@@ -1,0 +1,117 @@
+    :root {
+        --primary: #2c3e50;
+        --accent: #27ae60;
+        --warning: #f39c12;
+        --bg: #f4f7f6;
+        --card-bg: #ffffff;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg);
+        margin: 0;
+        padding: 20px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto 30px auto;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    h1 {
+        color: var(--primary);
+    }
+
+    .btn-group {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    button {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+
+    .btn-warning {
+        background-color: var(--warning);
+    }
+
+    .btn-save {
+        background-color: var(--accent);
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .card {
+        background-color: var(--card-bg);
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-bottom: 1px solid #eee;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    .card-title {
+        margin: 0 0 10px 0;
+        font-size: 1.2rem;
+        color: var(--primary);
+    }
+
+    .card-text {
+        margin: 5px 0;
+        color: #555;
+        font-size: 0.95rem;
+    }
+
+    .estoque-control {
+        margin-top: 15px;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+    }
+
+    .estoque-control label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .estoque-control input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }

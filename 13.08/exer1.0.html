@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo com Saudação</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 300px;
+    }
+
+    .formulario {
+      display: flex;
+      gap: 10px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      border-color: #28a745;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+      background-color: #28a745;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #mensagem {
+      min-height: 24px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="formulario">
+      <input type="text" id="nomeInput" placeholder="Digite seu nome...">
+      <button type="button" onclick="cumprimentar()">Enviar</button>
+    </div>
+
+    <div id="mensagem"></div>
+  </div>
+
+  <script>
+    function cumprimentar() {
+      const nome = document.getElementById("nomeInput").value.trim();
+      const mensagem = document.getElementById("mensagem");
+
+      if (!nome) {
+        mensagem.textContent = "Por favor digita o nome";
+        return;
+      }
+
+      mensagem.textContent = "Olá, " + nome + "! Seja bem-vindo(a)!";
+    }
+  </script>
+
+</body>
+
+</html>

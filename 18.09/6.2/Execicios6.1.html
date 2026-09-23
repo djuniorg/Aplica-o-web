@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Controle de Estoque</title>
+</head>
+
+<body>
+
+  <header>
+
+    <h1>Controle de Estoque</h1>
+
+    <div class="btn-group">
+
+      <button onclick="carregarEstoque()">
+        Carregar Estoque
+      </button>
+
+      <button
+        class="btn-warning"
+        onclick="atualizarEstoque()">
+        Atualizar Estoque
+      </button>
+
+      <button
+        class="btn-save"
+        onclick="salvarEstoque()">
+        Salvar Estoque
+      </button>
+
+    </div>
+
+  </header>
+
+  <main
+    class="grid-container"
+    id="gridProdutos">
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

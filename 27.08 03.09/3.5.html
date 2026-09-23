@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Buscar Tecnologia" onInput="busca()">
+
+    <ul id="listaTecnologias">
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>PHP</li>
+        <li>Java</li>
+    </ul>
+
+    <script>
+        function busca() {
+            const input = document.querySelector('input');
+            const filtro = input.value.toLowerCase();
+            const tecnologia = document.querySelectorAll('#listaTecnologias li');
+
+            for (
+            let i = 0; i < tecnologia.length; i++) {
+                
+                if (tecnologia[i].textContent.toLowerCase().includes(filtro)){
+                    tecnologia[i].style.display = "block"
+                }
+                else {
+                    tecnologia[i].style.display = "none"
+                }
+            }
+        }
+    </script>
+</body>
+</html>

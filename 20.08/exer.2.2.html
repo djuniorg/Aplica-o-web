@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Porcentagem</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="number"] {
+      width: 80px;
+      padding: 10px;
+      font-size: 18px;
+      text-align: center;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    input[type="number"]:focus {
+      border-color: #007bff;
+    }
+
+    .simbolo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .btn-igual {
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-igual:hover {
+      background-color: #0056b3;
+    }
+
+    .simbolos {
+      font-size: 24px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+      cursor: pointer;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <input type="number" id="valor2" value="20">
+    <select class="simbolos" id="operacao">
+      <option value="+" class="mais">+</option> #soma
+      <option value="-" class="menos">-</option> #subtração
+      <option value="%" class="divisao">%</option> #divisão
+      <option value="x" class="multiplicar">x</option> #multiplicação
+      <option value="Σ" class="somatorio">Σ</option> #somatório
+      <option value="Π" class="multiplicador">Π</option> #multiplicador
+      <option value="P" class="permutacao">P</option> #potencia
+      <option value="!" class="fatorial">!</option> #fatorial
+    </select>
+    <input type="number" id="valor" value="50">
+    <button class="btn-igual" id="calcular">=</button>
+    <input type="number" id="resultado" value="10">
+  </div>
+
+  <script>
+    const valor2 = document.getElementById("valor2");
+    const valor = document.getElementById("valor");
+    const resultado = document.getElementById("resultado");
+    const calcular = document.getElementById("calcular");
+    const operacao = document.getElementById("operacao");
+    const adicao = document.querySelector(".mais");
+    const subtracao = document.querySelector(".menos");
+    const multiplicacao = document.querySelector(".multiplicar");
+    const divisoes = document.querySelector(".divisao");
+
+    calcular.addEventListener("click", function () {
+      const valorNumerico2 = Number(valor2.value);
+      const valorNumerico = Number(valor.value);
+      const operacaoSelecionada = operacao.value;
+
+      if (valorNumerico2 == 0 || valorNumerico == 0) {
+        console.log("Não digite o numero 0 :]")
+      }
+
+      let resultadoFinal;
+      if (operacaoSelecionada === "+") {
+        resultadoFinal = valorNumerico2 + valorNumerico;
+      }
+      else if (operacaoSelecionada === "-") {
+        resultadoFinal = valorNumerico2 - valorNumerico;
+      }
+      else if (operacaoSelecionada === "x") {
+        resultadoFinal = valorNumerico2 * valorNumerico;
+      }
+      else if (operacaoSelecionada === "%") {
+        resultadoFinal = valorNumerico2 / valorNumerico;
+      }
+      else if (operacaoSelecionada === "Σ") {
+        resultadoFinal = 0;
+
+        for (let numero = valorNumerico; numero <= valorNumerico2; numero++) {
+          resultadoFinal = resultadoFinal + numero;
+        }
+      }
+      else if (operacaoSelecionada === "Π") {
+        resultadoFinal = 1;
+
+        for (let numero = valorNumerico; numero <= valorNumerico2; numero++) {
+          resultadoFinal = resultadoFinal * numero;
+        }
+      }
+
+      else if (operacaoSelecionada === P) {
+        resultadoFinal = 1;
+
+        for (let numero = valorNumerico; numero <= valorNumerico2; numero++) {
+          resultadoFinal = resultadoFinal * numero;
+        }
+      }
+
+      else if (operacaoSelecionada === "!") {
+        resultadoFinal = 1;
+      }
+
+        for (let numero = valorNumerico; numero >= 1; numero--) {
+          resultadoFinal = resultadoFinal * numero;
+        }
+
+      resultado.value = resultadoFinal.toFixed(2);
+    });
+  </script>
+
+</body>
+
+</html>

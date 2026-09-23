@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f0f2f5;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: white;
+            padding: 10px;
+            margin-top: 8px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista de Tarefas</h1>
+    <input type="text" id="tarefaInput" placeholder="Digite uma tarefa">
+    <button id="adicionarTarefa" onclick="adicionarTarefa()">Adicionar Tarefa</button>
+    <ul id="minhasTarefas">
+
+    </ul>
+
+    <script>
+        let listaDeTarefas = []
+        function adicionarTarefa() {
+            // Pega o que foi digitado
+            let texto = document.getElementById("tarefaInput").value;
+
+            // Guarda o texto dentro da lista
+            listaDeTarefas.push(texto);
+
+            // Limpa o campo para a próxima digitação
+            document.getElementById("tarefaInput").value = "";
+
+            // Atualiza a lista de tarefas na tela
+            atualizarLista();
+
+            document.getElementById("tarefaInput").focus();
+        }
+
+        function atualizarLista() {
+            // 1. Limpa todo o conteúdo visual da lista HTML
+            document.getElementById('minhasTarefas').innerHTML = "";
+
+            // 2. Percorre o array listaDeTarefas utilizando um laço for tradicional
+            for (let i = 0; i < listaDeTarefas.length; i++) {
+
+                // 3. Adiciona um item <li> na lista com o texto correspondente do array
+                document.getElementById('minhasTarefas').innerHTML += "<li>" + listaDeTarefas[i] + "</li>";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

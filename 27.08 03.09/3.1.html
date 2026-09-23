@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="campoNome" placeholder="Digite seu nome">
+        <button id="Saudar">Saudar</button>
+        <p id="mensagem"></p>
+    </div>
+
+    <script>
+        function construirSaudacao(nome) {
+            return `Olá, ${nome}! Seja bem-vindo(a)  ao curso de Web!`;
+        }
+
+        document.getElementById('Saudar').addEventListener('click', function () {
+            const nome = document.getElementById('campoNome').value;
+            const mensagem = construirSaudacao(nome);
+            document.getElementById('mensagem').textContent = mensagem;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .inputs {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        #resultado {
+            margin-top: 15px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inputs">
+            <input type="number" id="Nota1" placeholder="Digite a primeira nota">
+            <input type="number" id="Nota2" placeholder="Digite a segunda nota">
+        </div>
+        <button id="resultadoCalculo" onclick="resultadoCalcular()">Calcular Média</button>
+
+        <div id="resultado"></div>
+    </div>
+    <script>
+        function calcularMedia(nota1, nota2) {
+            return (nota1 + nota2) / 2;
+        }
+        function resultadoCalcular() {
+            const nota1 = Number(document.getElementById('Nota1').value);
+            const nota2 = Number(document.getElementById('Nota2').value);
+            const media = calcularMedia(nota1, nota2);
+
+            document.getElementById('resultado').textContent = `A média das notas é: ${media}`;
+
+            if (media >= 7) {
+                document.getElementById('resultado').textContent += " - Aprovado!";
+                document.getElementById('resultado').style.color = 'green';
+            } else {
+                document.getElementById('resultado').textContent += " - Reprovado!";
+                document.getElementById('resultado').style.color = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>

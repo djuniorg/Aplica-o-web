@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            align-items: center;
+            text-align: center;
+
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: calc(100% - 22px);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <input type="text" id="nomeProduto" placeholder="Digite o nome do produto">
+            <input type="number" id="precoProduto" placeholder="Digite o preço do produto">
+            <button type="button" id="cadastrar" onclick="cadastrarProduto()">Cadastrar Produto</button>
+            <ul id="listaProdutos">
+            
+            </ul>
+        </form>
+    </div>
+
+    <script>
+        function cadastrarProduto() {
+            const li = document.createElement('li');
+            const nomeProduto = document.getElementById('nomeProduto').value;
+            const precoProduto = document.getElementById('precoProduto').value;
+            
+            li.textContent = `Produto: ${nomeProduto} - Preço: R$ ${precoProduto}`;
+            document.getElementById('listaProdutos').appendChild(li);
+
+            const excluir = document.createElement('button');
+            excluir.textContent = 'Excluir';
+            li.appendChild(excluir);
+            excluir.onclick = function() {
+                li.remove();
+            };
+
+        }
+    </script>
+</body>
+</html>
